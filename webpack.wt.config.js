@@ -11,22 +11,19 @@ module.exports = Request.get(LIST_MODULES_URL, { json: true }).then(function (da
   return {
     entry: './webtask',
     output: {
-      path: './build',
       filename: 'bundle.js',
+      path: __dirname + '/build',
       library: true,
       libraryTarget: 'commonjs2',
     },
     module: {
-      loaders: [
-        { test: /\.jade$/, loader: require.resolve('jade-loader') },
-        {
-          test: /\.json?$/,
-          loader: 'json'
-        }
-      ]
+      rules: [{
+        loader: "pug-loader",
+        test: /\.jade$/
+      }],
     },
     externals: _(modules).reduce(function (acc, module) {
-        return _.set(acc, module.name, true);
+      return _.set(acc, module.name, true);
     }, {
       // Not provisioned via verquire
       'auth0-api-jwt-rsa-validation': true,
