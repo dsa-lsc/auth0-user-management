@@ -25,7 +25,7 @@
     "json-loader": "^0.5.4",
     "lodash": "^4.3.0",
     "react": "^16.13.1",
-    "request-promise": "^2.0.0",
+    "request-promise": "^4.2.5",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
   }

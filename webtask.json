@@ -1,7 +1,7 @@
 {
-  "title": "User Management .6",
+  "title": "User Management .7",
   "name": "auth0-user-management",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "dsa-lsc",
   "description": "This is an ambitious extension",
   "type": "application",
