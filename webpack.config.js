@@ -25,23 +25,23 @@ module.exports = {
   entry: './server',
   externals: readExternals(),
   output: {
-    path: './build',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    path: __dirname + '/build'
   },
   module: {
     rules: [{
-      loader: "jade-loader",
+      loader: "pug-loader",
       test: /\.jade$/
     }],
-    loaders: [
-      // { test: /\.jade$/, loader: require.resolve('jade-loader') },
-      {
-        test: /\.json?$/,
-        loader: 'json'
-      }
-    ]
+    // loaders: [
+    //   { test: /\.jade$/, loader: require.resolve('pug-loader') },
+    //   {
+    //     test: /\.json?$/,
+    //     loader: 'json'
+    //   }
+    // ]
   },
   plugins: [
-    new webpack.BannerPlugin('module.exports = ', {raw: true, entryOnly: false})
+    new webpack.BannerPlugin({banner: 'module.exports = ', raw: true, entryOnly: false})
   ]
 };
