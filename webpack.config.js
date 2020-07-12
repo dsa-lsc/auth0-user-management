@@ -29,8 +29,12 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
+    rules: [{
+      loader: "jade-loader",
+      test: /\.jade$/
+    }],
     loaders: [
-      { test: /\.jade$/, loader: require.resolve('jade-loader') },
+      // { test: /\.jade$/, loader: require.resolve('jade-loader') },
       {
         test: /\.json?$/,
         loader: 'json'
